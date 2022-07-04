@@ -1,0 +1,12 @@
+alias k=kubectl
+k create ns ckad-prep
+k get ns
+k run mypod --image nginx:2.3.5 --restart Never --port 80 -n ckad-prep
+k get pods -n ckad-prep
+k describe pod mypod -n ckad-prep
+k edit pod mypod -n ckad-prep
+k exec mypod  -it -n ckad-prep -- /bin/bash 
+k get pods -n ckad-prep -o wide
+k run busybox --image busybox --restart Never --rm  -it -- wget -O- 10.244.1.2:80
+k logs my-pod -n ckad-prep
+k delete ns ckad-prep
