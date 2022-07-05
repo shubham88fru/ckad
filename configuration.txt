@@ -1,35 +1,10 @@
-46  k create configmap db-config --from-env-file=config.txt 
-   47  k get cm
-   48  k get cm db-config -o yaml
-   49  k rm pod backend --image nginx --restart Never  -o yaml --dry-run > backend.yaml
-   50  k run pod backend --image nginx --restart Never  -o yaml --dry-run > backend.yaml
-   51  ls
-   52  vi backend.yaml 
-   53  k create -f backend.yaml `
-   54  k create -f backend.yaml
-   55  vi backend.yaml 
-   56  k create -f backend.yaml
-   57  vi backend.yaml 
-   58  k create -f backend.yaml
-   59  vi backend.yaml 
-   60  k create -f backend.yaml
-   61  rm -rf backend.yaml 
-   62  vi backend.yaml
-   63  rm -rf backend.yaml 
-   64  vi backend.yaml
-   65  k create -f backend.yaml
-   66  k get pods
-   67  k exec backend -it -- /bin/bash
-   68  top
-   69  clear
-   70  k create secret generic db-credentials --from-literal=db-password=psswd
-   71  k get secrets
-   72  k get secret -o yaml
-   73  k run backend --image nginx --restart Never -o yaml --dry-run=client > backend.yaml
-   74  ls
-   75  vi backend.yaml 
-   76  k create -f backend.yaml 
-   77  k delete -f backend.yaml 
-   78  k create -f backend.yaml 
-   79  k get pods
-   80  k exec backend -it -- /bin/bash
+k create configmap db-config --from-env-file=config.txt 
+k get cm
+k get cm db-config -o yaml
+k run pod backend --image nginx --restart Never  -o yaml --dry-run > backend.yaml
+k create -f backend.yaml
+k exec backend -it -- /bin/bash
+k create secret generic db-credentials --from-literal=db-password=psswd
+k get secrets
+k get secret -o yaml
+k run backend --image nginx --restart Never -o yaml --dry-run=client > backend.yaml
