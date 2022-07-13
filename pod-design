@@ -1,1 +1,7 @@
-
+k run frontend --image nginx --restart Never --labels=env=prod,team=shiny
+k run backend --image nginx --restart Never --labels=env=prod,team=legacy,app=v1.2.4
+k get pods --show-labels
+k edit pod frontend
+k get pod backend -o yaml | grep -C4 annotations
+k get pods -l 'team in (shiny, legacy)',env=prod --show-labels
+k label pod backend env-
