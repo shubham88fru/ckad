@@ -5,3 +5,10 @@ k edit pod frontend
 k get pod backend -o yaml | grep -C4 annotations
 k get pods -l 'team in (shiny, legacy)',env=prod --show-labels
 k label pod backend env-
+k create deployment deploy --image nginx -o yaml --dry-run > deploy.yaml
+k get deploy
+k rollout history deploy
+k edit deployment deploy
+k rollout history deploy --revision=2
+k scale deployment deploy --replicas=5
+k rollout undo deploy --to-revision=1
