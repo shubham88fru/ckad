@@ -12,3 +12,7 @@ k edit deployment deploy
 k rollout history deploy --revision=2
 k scale deployment deploy --replicas=5
 k rollout undo deploy --to-revision=1
+K create cronjob current-date --image nginx --restart OnFailure --schedule="* * * * *" -- /bin/bash -c 'echo "Current date : $date"'
+k get cronjobs --watch
+k get pods --show-labels
+k edit cronjob current-date
