@@ -1,0 +1,5 @@
+k create deployment myapp --image nginx --port 80 
+k create deployment myapp --image nginx --port 80 -o yaml > deployment.yaml
+k expose  deploy myapp --target-port 80 
+k run busybox --image busybox --restart Never --rm -it -- wget -O- 10.99.120.195:80
+k edit service myapp
