@@ -1,0 +1,11 @@
+k create ns my-namespace #create a namespace
+
+kn my-namespace # `kn` is an alias, and we're setting the namespace to my-namespace here
+
+k run my-pod --image=nginx --restart=Never $do > somename.yaml # `$do` is the alias for dry run we 've created.
+
+$kfc somename.yaml #`$kfc` is alias for kubectl create -f
+
+k get pod -w #`-w` is watch flag.
+
+k get pv #get persistent volumes.
