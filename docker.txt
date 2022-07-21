@@ -1,0 +1,7 @@
+docker build -t my-image:v0.1 .
+
+docker images
+
+docker save <>
+
+docker export <>
