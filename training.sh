@@ -12,7 +12,7 @@ alias kn='f() { [ "$1" ] && kubectl config set-context --current --namespace $1 
 alias kga="kubectl get all"
 export do = "--dry-run=client -o yaml"
 export kfc="kubectl apply -f"
-
+export kcn="kubectl config get-contexts"
 
 #to execute the bash changes
 . .bashrc
