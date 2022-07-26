@@ -1,1 +1,1 @@
-kubectl config set-context --current --namespace=pod-namespace
+kubectl config set-context --current --namespace=pod-namespace #namespace
