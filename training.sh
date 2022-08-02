@@ -16,3 +16,20 @@ export kcn="kubectl config get-contexts"
 
 #to execute the bash changes
 . .bashrc
+
+
+--------------------------------
+
+alias k=kubectl
+source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-co
+echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your b
+complete -o default -F __start_kubectl k
+# short alias to set/show context/namespace (only works for bash and bash-compatible shells, c
+alias kx='f() { [ "$1" ] && kubectl config use-context $1 || kubectl config current-context ; 
+alias kn='f() { [ "$1" ] && kubectl config set-context --current --namespace $1 || kubectl con
+alias kcn="kubectl config get-contexts"
+export kaf="kubectl apply -f"
+export kdf="kubectl delete -f"
+export do="--dry-run=client -o yaml"
+
+--------------------------------
