@@ -14,3 +14,5 @@ k create deployment my-dployment --replicas=3 --image=nginx --port=80
 k expose deployment my-deployment --port=8080 --target-port=80
 k get ep
 k create svc nodeport my-svc --tcp=5678:8080
+k set image deployment edit-deployment nginx=nginx:1.14.1
+k scale deployment blue-deployment --replicas 7
