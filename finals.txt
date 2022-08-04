@@ -8,3 +8,9 @@ kubectl create role rbac-role --verb=get,watch --resource=pods,pods/status #👈
 kubectl create rolebinding rbac-rolebinding --role=rbac-role --serviceaccount=rbac-namespace:rbac-sa #👈👈👈 Bind Account and Role
 kubectl edit role rbac-role #👈👈👈 Edit the role
 kubectl auth can-i get pods --as=system:serviceaccount:rbac-namespace:rbac-sa
+
+
+k create deployment my-dployment --replicas=3 --image=nginx --port=80
+k expose deployment my-deployment --port=8080 --target-port=80
+k get ep
+k create svc nodeport my-svc --tcp=5678:8080
