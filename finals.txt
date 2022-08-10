@@ -1,4 +1,5 @@
 kubectl config set-context --current --namespace=pod-namespace #namespace
+kubectl config set-context $(kubectl config current-context) --namespace=prod
 
 k create secret generic my-secret --from-literal=user=bob --from-literal=password=123456
 
