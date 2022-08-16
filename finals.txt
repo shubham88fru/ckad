@@ -3,7 +3,8 @@ kubectl config set-context $(kubectl config current-context) --namespace=prod
 
 k create secret generic my-secret --from-literal=user=bob --from-literal=password=123456
 k create secret generic my-secret --from-file=somefile.properties
-echo -n 'some string' | base64 
+echo -n 'some string' | base64  #encode a string to base64
+echo -n 'base64 encode string' | base64 --decode #decode the encoded string back
 
 kubectl create sa my-serviceaccount
 kubectl create role rbac-role --verb=get,watch --resource=pods,pods/status #👈👈👈Create a Role (What and Where)
