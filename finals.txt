@@ -27,3 +27,6 @@ k scale deployment blue-deployment --replicas 7
 kubectl [command] [TYPE] [NAME] -o <output_format> #<output_format>=json, name, wide, yaml
 
 kubectl get pods --all-namespaces #get pods in all and any namespace.
+
+
+kubectl explain pods --recursive | grep envFrom -A3
