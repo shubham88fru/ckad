@@ -20,7 +20,6 @@ kubectl create service clusterip redis --tcp=6379:6379 --dry-run=client -o yaml 
 kubectl expose pod nginx --port=80 --name nginx-service --type=NodePort --dry-run=client -o yaml ####👈👈👈Create a Service named nginx of type NodePort to expose pod nginx's port 80 on port 30080 on the nodes: This will automatically use the pod's labels as selectors, but you cannot specify the node port. You have to generate a definition file and then add the node port in manually before creating the service with the pod.######
 kubectl edit deployment my-deployment
 
-
 k get ep
 k create svc nodeport my-svc --tcp=5678:8080
 k set image deployment edit-deployment nginx=nginx:1.14.1
