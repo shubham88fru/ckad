@@ -38,3 +38,13 @@ kubectl create ingress ingress-test --rule="wear.my-online-store.com/wear*=wear-
 
 #kubectl convert plugin needs to be instaled prior to running this
 kubectl convert -f <old-yml-file> --output-version <new-api-version>
+
+
+#create taint on a node
+kubectl taint nodes node1 key1=value1:NoSchedule
+
+#remove taint
+kubectl taint nodes node1 key1=value1:NoSchedule-
+
+#add label to a node
+kubectl label nodes <your-node-name> disktype=ssd
