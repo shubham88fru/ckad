@@ -48,3 +48,7 @@ kubectl taint nodes node1 key1=value1:NoSchedule-
 
 #add label to a node
 kubectl label nodes <your-node-name> disktype=ssd
+
+#top command
+k top nodes
+k top pods
