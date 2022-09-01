@@ -55,3 +55,7 @@ kubectl label nodes <your-node-name> disktype=ssd
 #top command
 k top nodes
 k top pods
+
+
+#create job
+k create job throw-dice-job --image=kodekloud/throw-dice
