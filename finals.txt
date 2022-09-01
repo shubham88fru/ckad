@@ -1,5 +1,5 @@
 #label selectors
-k get pods --selector env=dev
+k get pods --selector env=dev,bu=tech
 
 kubectl config set-context --current --namespace=pod-namespace #namespace
 kubectl config set-context $(kubectl config current-context) --namespace=prod
