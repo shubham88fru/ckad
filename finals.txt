@@ -1,3 +1,6 @@
+#get deployments in all resource
+k get deployments -A
+
 #label selectors
 k get pods --selector env=dev,bu=tech
 
