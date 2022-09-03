@@ -62,3 +62,7 @@ k top pods
 
 #create job
 k create job throw-dice-job --image=kodekloud/throw-dice
+
+
+#create ingress
+k create ingress my-ingress --rule="/pay=pay-service:8080"
