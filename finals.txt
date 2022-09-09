@@ -1,3 +1,6 @@
+#list all kubernetes resources and their shortforms
+k api-resources
+
 #get deployments in all resource
 k get deployments -A
 
