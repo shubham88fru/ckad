@@ -1,7 +1,7 @@
 #list all kubernetes resources and their shortforms
 k api-resources
 
-#get deployments in all resource
+#get deployments in all namespaces
 k get deployments -A
 
 #label selectors
