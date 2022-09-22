@@ -69,3 +69,7 @@ k create job throw-dice-job --image=kodekloud/throw-dice
 
 #create ingress
 k create ingress my-ingress --rule="/pay=pay-service:8080"
+
+######
+command: ["/bin/sh"]
+args: ["-c", "while true; do echo hello; sleep 10;done"]
