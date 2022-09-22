@@ -73,3 +73,5 @@ k create ingress my-ingress --rule="/pay=pay-service:8080"
 ######
 command: ["/bin/sh"]
 args: ["-c", "while true; do echo hello; sleep 10;done"]
+
+kubectl get pods -n ca300 ip-podzoid -o jsonpath={.status.podIP}
