@@ -32,6 +32,7 @@ kubectl edit deployment my-deployment
 k get ep
 k create svc nodeport my-svc --tcp=5678:8080
 k set image deployment edit-deployment nginx=nginx:1.14.1
+k set image deployment edit-deployment nginx=nginx:1.14.1 --record # to record the comand in rollout history
 k scale deployment blue-deployment --replicas 7
 
 kubectl [command] [TYPE] [NAME] -o <output_format> #<output_format>=json, name, wide, yaml
@@ -75,3 +76,7 @@ command: ["/bin/sh"]
 args: ["-c", "while true; do echo hello; sleep 10;done"]
 
 kubectl get pods -n ca300 ip-podzoid -o jsonpath={.status.podIP}
+
+#Fitlering by labels advanced
+kubectl get pods -l 'environment in (production),tier in (frontend)'
+kubectl get pods -l 'environment,environment notin (frontend)'
