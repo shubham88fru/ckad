@@ -80,3 +80,6 @@ kubectl get pods -n ca300 ip-podzoid -o jsonpath={.status.podIP}
 #Fitlering by labels advanced
 kubectl get pods -l 'environment in (production),tier in (frontend)'
 kubectl get pods -l 'environment,environment notin (frontend)'
+
+#When you have a edited yaml and want to replace the existing object with the edited yml
+k replace -f <edited_yml_name> --force
