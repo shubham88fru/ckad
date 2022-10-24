@@ -7,6 +7,9 @@ k get deployments -A
 #label selectors
 k get pods --selector env=dev,bu=tech
 
+#Show labels for all pods (or any other Kubernetes object that supports labelling)
+kubectl get pods --show-labels
+
 kubectl config set-context --current --namespace=pod-namespace #namespace
 kubectl config set-context $(kubectl config current-context) --namespace=prod
 
@@ -83,3 +86,6 @@ kubectl get pods -l 'environment,environment notin (frontend)'
 
 #When you have a edited yaml and want to replace the existing object with the edited yml
 k replace -f <edited_yml_name> --force
+
+#Vim show no.
+:set number
