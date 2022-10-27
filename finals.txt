@@ -4,7 +4,9 @@ k api-resources
 #get deployments in all namespaces
 k get deployments -A
 
-k run project-plt-6cc-api --image=nginx:1.17.3-alpine --labels project=plt-6cc-api
+k run project-plt-6cc-api --image=nginx:1.17.3-alpine --labels project=plt-6cc-api #Add labels to a pod in commmand line
+
+k run tmp --restart=Never --rm --image=nginx:alpine -i -- curl http://project-plt-6cc-svc.pluto:3333 #Temporary pod to test curl
 
 #label selectors
 k get pods --selector env=dev,bu=tech
