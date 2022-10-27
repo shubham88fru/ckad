@@ -89,3 +89,6 @@ k replace -f <edited_yml_name> --force
 
 #Vim show no.
 :set number
+
+export do="--dry-run=client -o yaml"    # k create deploy nginx --image=nginx $do
+export now="--force --grace-period 0"   # k delete pod x $now
