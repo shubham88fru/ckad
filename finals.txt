@@ -4,6 +4,8 @@ k api-resources
 #get deployments in all namespaces
 k get deployments -A
 
+k run project-plt-6cc-api --image=nginx:1.17.3-alpine --labels project=plt-6cc-api
+
 #label selectors
 k get pods --selector env=dev,bu=tech
 
