@@ -96,3 +96,8 @@ k replace -f <edited_yml_name> --force
 
 export do="--dry-run=client -o yaml"    # k create deploy nginx --image=nginx $do
 export now="--force --grace-period 0"   # k delete pod x $now
+
+
+#Find out the ingressClassName with:
+k get ingressclass
+kubectl create ingress <ingress-name> --class <ingress_class> --rule="host/path=service:port"
